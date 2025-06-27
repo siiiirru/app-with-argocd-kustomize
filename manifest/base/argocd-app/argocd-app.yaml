@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: argocd-app-container
-        image: siyunp/app-with-argocd-kustomize:abe153c
+        image: siyunp/app-with-argocd-kustomize:6d2664f
         ports:
         - protocol: TCP
           containerPort: 8080
