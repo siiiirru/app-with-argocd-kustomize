@@ -1,7 +1,5 @@
 resources:
 - argocd-db.yaml
-- mysql-sealed-secret.yaml
-- mysql-app-sealed-secret.yaml
 
 configMapGenerator:
 - name: mysql-initdb-config
