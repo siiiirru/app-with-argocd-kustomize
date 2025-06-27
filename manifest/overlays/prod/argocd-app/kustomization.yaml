@@ -4,3 +4,6 @@ resources:
 replicas:
   - name: argocd-app-deployment
     count: 5
+
+patches:
+  - path: app-patch.yaml

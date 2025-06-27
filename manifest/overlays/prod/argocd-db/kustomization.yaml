@@ -1,3 +1,5 @@
 resources:
 - ../../../base/argocd-db
 
+patches:
+  - path: mysql-patch.yaml
