@@ -13,7 +13,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: db-storage
   hostPath:
-    path: 
+    path: /mnt/data/mysql
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -91,4 +91,4 @@ spec:
         - name: initdb
           configMap:
             name: mysql-initdb-config
-            defalutMode: 0755
+            defaultMode: 0755
