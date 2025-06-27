@@ -11,14 +11,14 @@ spec:
       containers:
       - name: argocd-app-container
         env:
-          - name: MYSQL_DATABASE_URL
+          - name: SPRING_DATASOURCE_URL
             value: jdbc:mysql://dev-mysql-service:3306/myappdb
-          - name: MYSQL_USER
+          - name: SPRING_DATASOURCE_USERNAME
             valueFrom:
               secretKeyRef:
                 name: dev-mysql-app-secret
                 key: MYSQL_USER
-          - name: MYSQL_PASSWORD
+          - name: SPRING_DATASOURCE_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: dev-mysql-app-secret
