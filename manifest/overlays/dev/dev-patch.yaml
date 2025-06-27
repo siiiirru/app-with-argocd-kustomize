@@ -1,0 +1,8 @@
+# patch는 베이스에서 바꾸고싶은거 바꾸기. 
+# 여기선 replicas 개수 바꿈
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2

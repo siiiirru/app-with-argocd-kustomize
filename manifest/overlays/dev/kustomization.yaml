@@ -1,0 +1,20 @@
+resources:
+- ../../base
+
+images:
+  - name: nginx
+    newName: nginx
+    newTag: "1.25"
+
+patches:
+  - path: dev-patch.yaml
+  
+# 자동으로 네임스페이스 적용, name 앞에 접두사 붙임
+namespace: dev
+namePrefix: dev-
+
+# configMapGenerator
+configMapGenerator:
+- name: env-vars	# base에 지정된 configMap의 이름
+  envs:
+    - dev.env		# dev.env 파일 내용 바탕 configMap 생성
