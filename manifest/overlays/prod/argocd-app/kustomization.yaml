@@ -1,0 +1,6 @@
+resources:
+- ../../base/argocd-app
+
+replicas:
+  - name: argocd-app-deployment
+    count: 5

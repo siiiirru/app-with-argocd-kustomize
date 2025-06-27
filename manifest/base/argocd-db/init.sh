@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "[INIT] Starting MySQL initialization script"
+
+cat <<EOF | mysql -u root -p$MYSQL_ROOT_PASSWORD
+CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;
+CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
+GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';
+FLUSH PRIVILEGES;
+EOF
+
+echo "[INIT] MySQL initialization completed"

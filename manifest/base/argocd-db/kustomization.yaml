@@ -1,0 +1,8 @@
+resources:
+- argocd-db.yaml
+- mysql-sealed-secret.yaml
+- mysql-app-sealed-secret.yaml
+
+- name: mysql-initdb-config
+  files:
+    - init.sh

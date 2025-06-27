@@ -1,13 +1,6 @@
 resources:
-- ../../base
-
-images:
-  - name: nginx
-    newName: nginx
-    newTag: "latest"
-
-patches:
-  - path: prod-patch.yaml
+- argocd-app
+- argocd-db
 
 # 자동으로 네임스페이스 적용, name 앞에 접두사 붙임
 namespace: prod
