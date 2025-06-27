@@ -7,6 +7,13 @@ resources:
 namespace: dev
 namePrefix: dev-
 
+nameReference:
+- kind: Secret
+  version: v1
+  fieldSpecs:
+  - path: spec/template/spec/containers/env/valueFrom/secretKeyRef/name
+    kind: Deployment
+    
 # configMapGenerator
 configMapGenerator:
 - name: env-vars	# base에 지정된 configMap의 이름
