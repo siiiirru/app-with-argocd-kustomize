@@ -2,10 +2,11 @@ name: App With Github Actions with ArgoCD
 
 on:
   workflow_dispatch:
-  # push:
+  push:
 
 jobs:
   ci:
+    if: github.actor != 'github-actions[bot]' && github.event.head_commit.message != 'Update nginx image to latest'
     runs-on: ubuntu-latest
 
     steps:
@@ -85,8 +86,8 @@ jobs:
       
     - name: Commit and push changes
       run: |
-        git config --local user.email "eqeee@naver.com"
-        git config --local user.name "siiiirru"
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
         git add .
         git commit -m "Update nginx image to latest"
         git push
