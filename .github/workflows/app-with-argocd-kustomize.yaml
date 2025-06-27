@@ -78,7 +78,7 @@ jobs:
 
     - name: Set up Image
       run: |
-        sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:[a-f0-9]\+%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ env.SHORT_SHA }}%" ./manifest/base/argocd-app/argocd-app.yaml
+        sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:.*%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ env.SHORT_SHA }}%" ./manifest/base/argocd-app/argocd-app.yaml
 
     - name: Show modified image line
       run: grep "image:" ./manifest/base/argocd-app/argocd-app.yaml
