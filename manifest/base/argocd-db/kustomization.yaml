@@ -3,6 +3,7 @@ resources:
 - mysql-sealed-secret.yaml
 - mysql-app-sealed-secret.yaml
 
+configMapGenerator:
 - name: mysql-initdb-config
   files:
     - init.sh
