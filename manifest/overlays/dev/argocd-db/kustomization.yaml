@@ -1,2 +1,2 @@
 resources:
-- ../../base/argocd-db
+- ../../../base/argocd-db

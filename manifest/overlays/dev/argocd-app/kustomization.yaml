@@ -1,5 +1,5 @@
 resources:
-- ../../base/argocd-app
+- ../../../base/argocd-app
 
 replicas:
   - name: argocd-app-deployment
