@@ -1,4 +1,2 @@
 resources:
 - ../../../base/argocd-db
-- mysql-sealed-secret.yaml
-- mysql-app-sealed-secret.yaml
