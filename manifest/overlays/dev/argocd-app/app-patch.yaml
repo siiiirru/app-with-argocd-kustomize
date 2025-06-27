@@ -11,11 +11,8 @@ spec:
       containers:
       - name: argocd-app-container
         env:
-          - name: MYSQL_DATABASE
-            valueFrom:
-              secretKeyRef:
-                name: dev-mysql-app-secret
-                key: MYSQL_DATABASE
+          - name: MYSQL_DATABASE_URL
+            value: jdbc:mysql://dev-mysql-service:3306/myappdb
           - name: MYSQL_USER
             valueFrom:
               secretKeyRef:
